@@ -5,7 +5,7 @@ const path = require('path');
 let stylesDir = path.join(__dirname, 'styles');
 let destinationFile = path.join(__dirname, 'project-dist', 'bundle.css');
 
-async function readDirectory() {
+async function mergeStyles() {
     fs.WriteStream(destinationFile);
     try {
         const files = await readdir(stylesDir);
@@ -32,4 +32,4 @@ async function readDirectory() {
     }
 }
 
-readDirectory()
+mergeStyles()
