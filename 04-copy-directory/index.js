@@ -14,7 +14,6 @@ async function copyDirectory () {
         for (const file of files) {
             const currentFile = path.join(__dirname, 'files', file);
             const destinationFile = path.join(__dirname, 'files-copy', file);
-            fs.WriteStream(destinationFile);
             await copyFile(currentFile, destinationFile);
         }
     } catch (err) {

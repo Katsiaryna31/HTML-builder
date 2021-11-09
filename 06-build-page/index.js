@@ -83,7 +83,6 @@ async function copyFilesDirectory (dirName) {
         for (const file of files) {
             const currentFile = path.join(__dirname, 'assets', dirName, file);
             const destinationFile = path.join(__dirname, 'project-dist', 'assets', dirName, file);
-            fs.WriteStream(destinationFile);
             await copyFile(currentFile, destinationFile);
         }
     } catch (err) {
